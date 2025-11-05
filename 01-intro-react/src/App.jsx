@@ -3,6 +3,7 @@ import Counter from './components/Counter.jsx';
 import ActionPanel from './components/ActionPanel.jsx';
 import FaveSong from './components/FaveSong.jsx';
 import MoodToggle from './components/MoodToggle.jsx';
+import LikeCard from './components/LikeCard.jsx';
 
 function App() {
   return (
@@ -13,6 +14,11 @@ function App() {
       <ActionPanel />
       <FaveSong />
       <MoodToggle />
+      <LikeCard 
+      name = "Jessa Gozun"
+      age = {20}
+      motto = "Never stop learning!"
+      />
     </div>
   );
 }
