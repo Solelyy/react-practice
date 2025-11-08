@@ -7,6 +7,7 @@ import LikeCard from './components/LikeCard.jsx';
 import StudentCard from './components/StudentCard.jsx';
 import StudentsList from './components/StudentsList.jsx';
 import ProductList from './components/ProductList.jsx';
+import TaskList from './components/TaskList.jsx';
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
       <hr />
 
       <ProductList />
+
+      <TaskList />
 
     </div>
   );
