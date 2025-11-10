@@ -39,6 +39,7 @@ function App() {
       <hr />
 
       <ProductList />
+      <hr /> 
 
       <TaskList />
 

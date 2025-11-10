@@ -1,12 +1,14 @@
 import { useState } from "react";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
+import TaskFilter from "./TaskFilter";
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
   const [name, setName] = useState("");
   const [editingId, setEditingId] = useState(null);
   const [editedName, setEditedName] = useState("");
+  const [filter, setFilter] = useState("All");
 
   // Add task
   const addTask = () => {
@@ -53,6 +55,14 @@ function TaskList() {
     ));
   };
 
+  //Filter tasks
+  const filteredTask = tasks.filter((task) =>  {
+    if (filter === "All") return true;
+    if (filter === "Completed") return task.completed;
+    if (filter === "Active") return !task.completed;
+  });
+
+
   return (
     <div>
       <h2>To-do Task</h2>
@@ -63,13 +73,15 @@ function TaskList() {
         onSubmit={(e) => {e.preventDefault(); addTask();}}
       />
 
-      <hr />
+      <TaskFilter 
+      currentFilter={filter} onChangeFilter={setFilter}
+      />
 
-      {tasks.length === 0 ? (
-        <p>🧚🏻‍♂️ You haven't added a task yet...</p>
+      {filteredTask.length === 0 ? (
+        <p>🧚🏻‍♂️ Nothing to show yet...</p>
       ) : (
         <ul>
-          {tasks.map((task) => (
+          {filteredTask.map((task) => (
             <TaskItem
               key={task.id}
               task={task}
