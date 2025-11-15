@@ -8,6 +8,7 @@ import StudentCard from './components/StudentCard.jsx';
 import StudentsList from './components/StudentsList.jsx';
 import ProductList from './components/ProductList.jsx';
 import TaskList from './components/TaskList.jsx';
+import UsernameWatcher from './components/UsernameWatcher.jsx'
 
 function App() {
   return (
@@ -42,7 +43,9 @@ function App() {
       <hr /> 
 
       <TaskList />
+      <hr />
 
+      <UsernameWatcher />
     </div>
   );
 }
