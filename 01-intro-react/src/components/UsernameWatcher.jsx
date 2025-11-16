@@ -6,10 +6,12 @@ function UsernameWatcher () {
     const [username, setUsername] = useState("");
     const [message, setMessage] = useState("");
 
+    //Show once (mount) when the page loads
     useEffect(() => {
         console.log("No username exists yet.")
     }, []);
 
+    //Run every time the username changes
     useEffect(() => {
         if (username === "") return;
         setMessage(`Username changed: ${username}`)
