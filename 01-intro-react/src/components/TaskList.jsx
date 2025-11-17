@@ -66,15 +66,13 @@ function TaskList() {
   //Save on sessionStorage
   //show on first load (mount)
   useEffect(() => {
-    const saved = JSON.parse(sessionStorage.getItem("tasks"));
-    if (saved) setTasks(saved);
+    const savedTasks = sessionStorage.getItem("tasks");
+    if (savedTasks) setTasks(JSON.parse(savedTasks));
   }, []);
 
   //save to sessionStorage every time the tasks changes
   useEffect(() => {
-    if (tasks.length > 0) {
     sessionStorage.setItem("tasks", JSON.stringify(tasks));
-  }
   }, [tasks]);
 
   return (
