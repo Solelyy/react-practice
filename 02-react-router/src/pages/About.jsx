@@ -1,7 +1,7 @@
 function About() {
   return (
     <div>
-      <h1>About Page</h1>
+      <h2>About Page</h2>
       <p>This is the About page of the app.</p>
     </div>
   );
