@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 function Home() {
+    const navigate = useNavigate();
+    
     return (
+        
     <div>
-        <h2>Home Page</h2>
-        <p>Welcome to my React router practice!</p>
+        <h1>Jessa Gozun - Full Stack Developer</h1>
+        <p>Hi, I build clean, functional, and user-friendly websites. </p>
+        <button onClick={() => navigate("/projects")}>View Projects</button>
     </div>
     );
 }
